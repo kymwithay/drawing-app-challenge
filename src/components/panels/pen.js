@@ -11,8 +11,8 @@ export default function Pen({penOptions, setPenOptions}) {
 					<div className="stroke-color-picker">
 						<input
 							type="color"
-							value={penOptions.strokeWidth}
-							onChange={e => setPenOptions({...penOptions, strokeWidth: e.target.value})}
+							value={penOptions.color}
+							onChange={e => setPenOptions({...penOptions, color: e.target.value})}
 							name="stroke-width"
 					/>
 				</div>
