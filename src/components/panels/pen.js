@@ -7,7 +7,7 @@ export default function Pen({penOptions, setPenOptions}) {
 			<h1>Pen</h1>
 			<section>
 				<label>
-					<h2>Stroke Color:</h2>
+					<h3>Stroke Color:</h3>
 					<div className="stroke-color-picker">
 						<input
 							type="color"
@@ -20,8 +20,7 @@ export default function Pen({penOptions, setPenOptions}) {
 			</section>
 			<section>
 				<label>
-					<h2>Stroke Width:</h2>
-					<div className="stroke-width-slider">
+					<h3>Stroke Width:{penOptions.strokeWidth}</h3>
 						<input
 							type="range"
 							min="1"
@@ -31,11 +30,10 @@ export default function Pen({penOptions, setPenOptions}) {
 							onChange={e => setPenOptions({...penOptions, strokeWidth: e.target.value})}
 							name="stroke-width"
 					/>
-				</div>
 		</label>
 			</section>
 			<section>
-				<h2>Line Type:</h2>
+				<h3>Line Type:</h3>
 				<div className="line-types">
 					<label>
 						<input
