@@ -17,6 +17,7 @@ export default function Eraser({eraserOptions, setEraserOptions}) {
 					/>
 				</label>
 			</section>
+			<button id="clear-button">Clear Canvas</button>
 		</div>
 	);
 }

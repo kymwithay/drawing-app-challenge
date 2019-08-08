@@ -11,6 +11,18 @@ export default function Canvas({activeTool, penOptions}) {
 		setCtx(canvas.getContext("2d"));
 	}, []);
 
+	// erases canvas
+	useEffect(() => {
+		const canvas = canvasRef.current;
+		const clearbutton = document.getElementById('clear-button');
+
+		if (clearbutton) {
+			clearbutton.addEventListener('click', () => {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+			});
+		}
+	})
+
 	const getX = (event) => {
 		if (event.pageX === undefined) {
 			return event.targetTouches[0].pageX - canvasRef.current.offsetLeft;
@@ -38,7 +50,7 @@ export default function Canvas({activeTool, penOptions}) {
 			ctx.moveTo(getX(event), getY(event));
 			event.preventDefault();
 		}
-		
+
 		else if (activeTool === "eraser") {
 			setIsDrawing(true);
 			ctx.strokeStyle = "#ffffff";
