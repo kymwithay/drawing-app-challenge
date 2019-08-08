@@ -38,6 +38,16 @@ export default function Canvas({activeTool, penOptions}) {
 			ctx.moveTo(getX(event), getY(event));
 			event.preventDefault();
 		}
+		
+		else if (activeTool === "eraser") {
+			setIsDrawing(true);
+			ctx.strokeStyle = "#ffffff";
+			ctx.beginPath();
+			ctx.setLineDash([]);
+			ctx.moveTo(getX(event), getY(event));
+			event.preventDefault();
+		}
+
 	};
 
 	const draw = (event) => {
