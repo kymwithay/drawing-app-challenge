@@ -8,16 +8,15 @@ export default function Pen({penOptions, setPenOptions}) {
 			<section>
 				<label>
 					<h3>Stroke Color:</h3>
-					<div className="stroke-color-picker">
 						<input
 							type="color"
 							value={penOptions.color}
 							onChange={e => setPenOptions({...penOptions, color: e.target.value})}
 							name="stroke-width"
 					/>
-				</div>
 		</label>
 			</section>
+
 			<section>
 				<label>
 					<h3>Stroke Width:{penOptions.strokeWidth}</h3>
@@ -32,34 +31,38 @@ export default function Pen({penOptions, setPenOptions}) {
 					/>
 		</label>
 			</section>
+
 			<section>
 				<h3>Line Type:</h3>
 				<div className="line-types">
-					<label>
 						<input
+							id="option1"
 							type="radio"
 							value="solid"
 							onChange={e => setPenOptions({...penOptions, lineType: "solid"})}
 							checked={penOptions.lineType === "solid"}
 						/>
+						<label for="option1">
 						<span className="line-types__option">Solid</span>
 					</label>
-					<label>
 						<input
+							id="option2"
 							type="radio"
 							value="dash"
 							onChange={e => setPenOptions({...penOptions, lineType: "dash"})}
 							checked={penOptions.lineType === "dash"}
 						/>
-						<span className="line-types__option">Dashed</span>
+						<label for="option2">
+							<span className="line-types__option">Dashed</span>
 					</label>
-					<label>
 						<input
+							id="option3"
 							type="radio"
 							value="dot"
 							onChange={e => setPenOptions({...penOptions, lineType: "dot"})}
 							checked={penOptions.lineType === "dot"}
 						/>
+						<label for="option3">
 						<span className="line-types__option">Dotted</span>
 					</label>
 				</div>
