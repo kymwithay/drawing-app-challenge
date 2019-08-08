@@ -41,6 +41,7 @@ export default function Pen({penOptions, setPenOptions}) {
 						<input
 							type="radio"
 							value="solid"
+							onChange={e => setPenOptions({...penOptions, lineType: "solid"})}
 							checked={penOptions.lineType === "solid"}
 						/>
 						<span className="line-types__option">Solid</span>
@@ -49,6 +50,7 @@ export default function Pen({penOptions, setPenOptions}) {
 						<input
 							type="radio"
 							value="dash"
+							onChange={e => setPenOptions({...penOptions, lineType: "dash"})}
 							checked={penOptions.lineType === "dash"}
 						/>
 						<span className="line-types__option">Dashed</span>
@@ -57,6 +59,7 @@ export default function Pen({penOptions, setPenOptions}) {
 						<input
 							type="radio"
 							value="dot"
+							onChange={e => setPenOptions({...penOptions, lineType: "dot"})}
 							checked={penOptions.lineType === "dot"}
 						/>
 						<span className="line-types__option">Dotted</span>
